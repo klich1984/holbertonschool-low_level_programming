@@ -12,6 +12,5 @@ unsigned long int key_index(const unsigned char *key, unsigned long int size)
 	unsigned long int index = 0;
 
 	index = hash_djb2(key);
-	printf("el index = %ld\n", index);
 	return (index % size);
 }
