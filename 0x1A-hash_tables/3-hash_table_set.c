@@ -22,6 +22,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 
 	index = hash_djb2((unsigned char *)key);  /*(unsigned char *) cast*/
-	printf("el index = %ld\n", index);
+	printf("the index before= %ld\n", index);
+	index = key_index((unsigned char *)key, ht->size);
+	printf("the index after= %ld\n", index);
 	return 1;
 }
