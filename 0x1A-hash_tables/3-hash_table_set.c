@@ -11,7 +11,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index = 0;
 	int result = 0;
-	(void) ht;
 	(void) result;
 
 	if (key == NULL || value == NULL)
@@ -25,5 +24,27 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	printf("the index before= %ld\n", index);
 	index = key_index((unsigned char *)key, ht->size);
 	printf("the index after= %ld\n", index);
+	result = add_elemnt_hash_table(ht, index, key, value);
+	return 1;
+}
+
+
+/**
+* add_elemnt_hash_table - function add node that array in el index
+* 
+* 
+*/
+
+int add_elemnt_hash_table(hash_table_t *ht, unsigned long int idx, const char *key, const char *value)
+{
+	(void) value;
+
+	ht->array[idx] = malloc(sizeof(hash_node_t));
+	/*Guardian de malloc*/
+	ht->array[idx]->key = malloc(sizeof(strlen(key)));
+	/*Guardian de malloc*/
+	strcpy(ht->array[idx]->key, key);
+	printf("El valor de key = %s\n", key);
+	printf("El valor de la copia de key = %s\n", ht->array[idx]->key);
 	return 1;
 }
