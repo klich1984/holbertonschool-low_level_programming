@@ -16,15 +16,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		printf("Key o value this empty");
 		/*free mallocs*/
-		return 0;
+		return (0);
 	}
 
 	index = hash_djb2((unsigned char *)key);  /*(unsigned char *) cast*/
-	printf("the index before= %ld\n", index);
 	index = key_index((unsigned char *)key, ht->size);
-	printf("the index after= %ld\n", index);
 	result = add_elemnt_hash_table(ht, index, key, value);
-	return 1;
+	return (result);
 }
 
 
@@ -37,7 +35,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 * Return: 1 if it succeeded, 0 otherwise
 */
 
-int add_elemnt_hash_table(hash_table_t *ht, unsigned long int idx, const char *key, const char *value)
+int add_elemnt_hash_table(hash_table_t *ht, unsigned long int idx,
+			const char *key, const char *value)
 {
 	hash_node_t *new_head = NULL;
 	hash_node_t *new_node = NULL;
@@ -46,21 +45,21 @@ int add_elemnt_hash_table(hash_table_t *ht, unsigned long int idx, const char *k
 	if (new_node == NULL)
 	{
 		/*liberar*/
-		return 0;
+		return (0);
 	}
 	/*creo los espacios en memoria para Lleno los datos*/
 	new_node->key = malloc(sizeof(strlen(key)));
 	if (new_node->key == NULL)
 	{
 		/*liberar*/
-		return 0;
+		return (0);
 	}
 	/*Guardian de malloc*/
 	new_node->value = malloc(sizeof(strlen(value)));
 	if (new_node->value == NULL)
 	{
 		/*liberar*/
-		return 0;
+		return (0);
 	}
 
 	/*rellenar espacios*/
@@ -70,5 +69,5 @@ int add_elemnt_hash_table(hash_table_t *ht, unsigned long int idx, const char *k
 	new_head = ht->array[idx];
 	ht->array[idx] = new_node;
 	new_node->next = new_head;
-	return 1;
+	return (1);
 }
