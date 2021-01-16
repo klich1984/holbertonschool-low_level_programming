@@ -53,10 +53,9 @@ int add_elemnt_hash_table(hash_table_t *ht, unsigned long int idx,
 	*new_node->key = malloc(sizeof(strlen(key)));
 	*/
 	new_node->key = malloc(strlen(key) + 1 * sizeof(char));
-
 	if (new_node->key == NULL)
 	{
-		/*liberar*/
+		free(new_node);
 		return (0);
 	}
 	/**
@@ -64,17 +63,15 @@ int add_elemnt_hash_table(hash_table_t *ht, unsigned long int idx,
 	*new_node->value = malloc(sizeof(strlen(value)));
 	*/
 	new_node->value = malloc(strlen(key) + 1 * sizeof(char));
-
 	if (new_node->value == NULL)
 	{
-		/*liberar*/
+		free(new_node->key);
+		free(new_node);
 		return (0);
 	}
-
 	/*rellenar espacios*/
 	strcpy(new_node->key, key);
 	strcpy(new_node->value, value);
-
 	new_head = ht->array[idx];
 	ht->array[idx] = new_node;
 	new_node->next = new_head;
