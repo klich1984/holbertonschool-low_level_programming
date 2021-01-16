@@ -11,7 +11,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index = 0;
 	int result = 0;
-	(void) result;
 
 	if (key == NULL || value == NULL)
 	{
@@ -31,20 +30,45 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 /**
 * add_elemnt_hash_table - function add node that array in el index
-* 
-* 
+* @ht: hash table
+* @idx: index of the position of the array
+* @key: key of the node
+* @value: value of value
+* Return: 1 if it succeeded, 0 otherwise
 */
 
 int add_elemnt_hash_table(hash_table_t *ht, unsigned long int idx, const char *key, const char *value)
 {
-	(void) value;
+	hash_node_t *new_head = NULL;
+	hash_node_t *new_node = NULL;
 
-	ht->array[idx] = malloc(sizeof(hash_node_t));
+	new_node = malloc(sizeof(hash_node_t));
+	if (new_node == NULL)
+	{
+		/*liberar*/
+		return 0;
+	}
+	/*creo los espacios en memoria para Lleno los datos*/
+	new_node->key = malloc(sizeof(strlen(key)));
+	if (new_node->key == NULL)
+	{
+		/*liberar*/
+		return 0;
+	}
 	/*Guardian de malloc*/
-	ht->array[idx]->key = malloc(sizeof(strlen(key)));
-	/*Guardian de malloc*/
-	strcpy(ht->array[idx]->key, key);
-	printf("El valor de key = %s\n", key);
-	printf("El valor de la copia de key = %s\n", ht->array[idx]->key);
+	new_node->value = malloc(sizeof(strlen(value)));
+	if (new_node->value == NULL)
+	{
+		/*liberar*/
+		return 0;
+	}
+
+	/*rellenar espacios*/
+	strcpy(new_node->key, key);
+	strcpy(new_node->value, value);
+
+	new_head = ht->array[idx];
+	ht->array[idx] = new_node;
+	new_node->next = new_head;
 	return 1;
 }
