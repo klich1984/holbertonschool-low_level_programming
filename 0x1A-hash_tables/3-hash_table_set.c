@@ -4,6 +4,7 @@
 * hash_table_set - function that adds an element to the hash table
 * @key: pointer a string what containe the key
 * @value: pointer a string what containe the value
+* @ht: hash table
 * Return: 1 if it succeeded, 0 otherwise
 */
 
@@ -12,7 +13,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index = 0;
 	int result = 0;
 
-	if (key == NULL || value == NULL)
+	if (key == NULL || value == NULL || strcmp(key, "") == 0 ||
+		strcmp(value, "") == 0)
 	{
 		/*free mallocs*/
 		return (0);
