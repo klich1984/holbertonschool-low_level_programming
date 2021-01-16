@@ -48,15 +48,23 @@ int add_elemnt_hash_table(hash_table_t *ht, unsigned long int idx,
 		/*liberar*/
 		return (0);
 	}
-	/*creo los espacios en memoria para Lleno los datos*/
-	new_node->key = malloc(sizeof(strlen(key)));
+	/**
+	 * creo los espacios en memoria para Lleno los datos
+	*new_node->key = malloc(sizeof(strlen(key)));
+	*/
+	new_node->key = malloc(strlen(key) + 1 * sizeof(char));
+
 	if (new_node->key == NULL)
 	{
 		/*liberar*/
 		return (0);
 	}
-	/*Guardian de malloc*/
-	new_node->value = malloc(sizeof(strlen(value)));
+	/**
+	 * Guardian de malloc
+	*new_node->value = malloc(sizeof(strlen(value)));
+	*/
+	new_node->value = malloc(strlen(key) + 1 * sizeof(char));
+
 	if (new_node->value == NULL)
 	{
 		/*liberar*/
