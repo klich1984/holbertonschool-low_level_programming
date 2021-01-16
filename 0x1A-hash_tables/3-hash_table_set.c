@@ -14,7 +14,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (key == NULL || value == NULL)
 	{
-		printf("Key o value this empty");
 		/*free mallocs*/
 		return (0);
 	}
