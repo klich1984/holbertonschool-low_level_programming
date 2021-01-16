@@ -63,7 +63,7 @@ int add_elemnt_hash_table(hash_table_t *ht, unsigned long int idx,
 	}
 
 	/*rellenar espacios*/
-	new_node->key = (char *)key;
+	strcpy(new_node->key, key);
 	strcpy(new_node->value, value);
 
 	new_head = ht->array[idx];
