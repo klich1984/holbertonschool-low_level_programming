@@ -14,18 +14,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	int result = 0;
 
 	if (key == NULL || value == NULL || strcmp(key, "") == 0 ||
-		strcmp(value, "") == 0)
+		strcmp(value, "") == 0 || ht == NULL || ht->array == NULL
+		|| ht->size == 0)
 	{
 		/*free mallocs*/
 		return (0);
 	}
 
-	index = hash_djb2((unsigned char *)key);  /*(unsigned char *) cast*/
 	index = key_index((unsigned char *)key, ht->size);
 	result = add_elemnt_hash_table(ht, index, key, value);
 	return (result);
 }
-
 
 /**
 * add_elemnt_hash_table - function add node that array in el index
@@ -44,10 +43,7 @@ int add_elemnt_hash_table(hash_table_t *ht, unsigned long int idx,
 
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
-	{
-		/*liberar*/
 		return (0);
-	}
 	/**
 	 * creo los espacios en memoria para Lleno los datos
 	*new_node->key = malloc(sizeof(strlen(key)));
@@ -74,6 +70,6 @@ int add_elemnt_hash_table(hash_table_t *ht, unsigned long int idx,
 	strcpy(new_node->value, value);
 	new_head = ht->array[idx];
 	ht->array[idx] = new_node;
-	new_node->next = new_head;
+	ht->array[idx]->next = new_head;
 	return (1);
 }
