@@ -38,8 +38,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 int add_elemnt_hash_table(hash_table_t *ht, unsigned long int idx,
 			const char *key, const char *value)
 {
-	hash_node_t *current = NULL;
-	hash_node_t *new_node = NULL;
+	hash_node_t *current = NULL, *new_node = NULL;
 	char *new_value = NULL;
 
 	current = ht->array[idx];
@@ -60,6 +59,26 @@ int add_elemnt_hash_table(hash_table_t *ht, unsigned long int idx,
 			current = current->next;
 	}
 	current = ht->array[idx];
+
+
+	new_node = add_node(key, value);
+
+	ht->array[idx] = new_node;
+	ht->array[idx]->next = current;
+	return (1);
+}
+
+/**
+ * add_node - create and insert key and value
+ * @key: key of the new node
+ * @value: value of the new node
+ * Return: Nothing
+ */
+
+hash_node_t *add_node(const char *key, const char *value)
+{
+	hash_node_t *new_node = NULL;
+
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
 		return (0);
@@ -88,7 +107,5 @@ int add_elemnt_hash_table(hash_table_t *ht, unsigned long int idx,
 	strcpy(new_node->key, key);
 	strcpy(new_node->value, value);
 
-	ht->array[idx] = new_node;
-	ht->array[idx]->next = current;
-	return (1);
+	return (new_node);
 }
