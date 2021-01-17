@@ -59,7 +59,7 @@ int add_elemnt_hash_table(hash_table_t *ht, unsigned long int idx,
 		else
 			current = current->next;
 	}
-
+	current = ht->array[idx];
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
 		return (0);
@@ -77,7 +77,7 @@ int add_elemnt_hash_table(hash_table_t *ht, unsigned long int idx,
 	 * Guardian de malloc
 	*new_node->value = malloc(sizeof(strlen(value)));
 	*/
-	new_node->value = malloc(strlen(key) + 1 * sizeof(char));
+	new_node->value = malloc(strlen(value) + 1 * sizeof(char));
 	if (new_node->value == NULL)
 	{
 		free(new_node->key);
