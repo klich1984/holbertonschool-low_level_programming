@@ -17,20 +17,29 @@ def island_perimeter(grid):
                     if grid[row][col - 1] == 0:
                         perimeter += 1
                 except:
-                    pass
+                    return
                 try:
                     if grid[row][col + 1] == 0:
                         perimeter += 1
                 except:
-                    pass
+                    return
                 try:
                     if grid[row - 1][col] == 0:
                         perimeter += 1
                 except:
-                    pass
+                    return
                 try:
                     if grid[row + 1][col] == 0:
                         perimeter += 1
                 except:
-                    pass
+                    return
     return perimeter
+
+if __name__ == "__main__":
+    grid = [
+        [0, 0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0, 0],
+        [0, 1, 1, 1, 0, 0],
+        [0, 1, 1, 1, 0, 0]
+    ]
+    print(island_perimeter(grid))
