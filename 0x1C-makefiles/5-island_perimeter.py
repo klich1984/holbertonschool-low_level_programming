@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Function that sum the perimeter of the island"""
 
 
 def island_perimeter(grid):
@@ -6,6 +7,7 @@ def island_perimeter(grid):
 
     Args:
         grid (list): list of list of integers
+    Return: perimeter of the island
     """
     perimeter = 0
     for row in range(len(grid)):
