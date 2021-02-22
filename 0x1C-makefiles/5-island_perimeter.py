@@ -17,21 +17,20 @@ def island_perimeter(grid):
                     if grid[row][col - 1] == 0:
                         perimeter += 1
                 except:
-                    return
+                    perimeter += 1
                 try:
                     if grid[row][col + 1] == 0:
                         perimeter += 1
                 except:
-                    return
+                    perimeter += 1
                 try:
                     if grid[row - 1][col] == 0:
                         perimeter += 1
                 except:
-                    return
+                    perimeter += 1
                 try:
                     if grid[row + 1][col] == 0:
                         perimeter += 1
                 except:
-                    return
+                    perimeter += 1
     return perimeter
-
