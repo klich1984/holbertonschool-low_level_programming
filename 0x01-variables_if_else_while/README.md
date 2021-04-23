@@ -1,6 +1,6 @@
 # 0x01. C - Variables, if, else, while
 
-## Resources:books:
+## Resources :eyes:
 Read or watch:
 * [Everything you need to know to start with C.pdf](https://intranet.hbtn.io/rltoken/GB1UNodFfec0AXUfmSxsLA)
 * [Keywords and identifiers](https://intranet.hbtn.io/rltoken/ckqC9BrBcMmv-DLmBauaWQ)
@@ -14,7 +14,7 @@ Read or watch:
 * [While loop](https://intranet.hbtn.io/rltoken/RY9a1EDxRKNNHhxbJ6Pn_g)
 
 ---
-## Learning Objectives:bulb:
+## Learning Objectives :technologist:
 What you should learn from this project:
 
 * What are the arithmetic operators and how to use them
@@ -36,5 +36,5 @@ What you should learn from this project:
 ---
 ---
 
-## Author
+## Author :writing_hand:
 * **Carlos Usuga Martinez** - [klich1984](https://github.com/klich1984)
