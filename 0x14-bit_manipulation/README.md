@@ -7,7 +7,7 @@ Read or watch:
 
 ---
 ## Learning Objectives :technologist:
-What:
+What you should learn from this project:
 
 * Look for the right source of information without too much help
 * How to manipulate bits and use bitwise operators
