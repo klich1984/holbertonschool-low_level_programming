@@ -10,7 +10,7 @@ Read or watch:
 
 ---
 ## Learning Objectives :technologist:
-What you should learn from this project:
+What:
 
 * What are function pointers and how to use them
 * What does a function pointer exactly hold
