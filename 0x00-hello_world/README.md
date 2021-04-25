@@ -15,7 +15,7 @@ Read or watch:
 
 ---
 ## Learning Objectives :technologist:
-What:
+What you should learn from this project:
 
 * Why C programming is awesome 
 * Who invented C
