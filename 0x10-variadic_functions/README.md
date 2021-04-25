@@ -8,7 +8,7 @@ Read or watch:
 
 ---
 ## Learning Objectives :technologist:
-What you should learn from this project:
+What:
 
 * What are variadic functions
 * How to use va_start, va_arg and va_end macros
