@@ -7,7 +7,7 @@ Read or watch:
 
 ---
 ## Learning Objectives :technologist:
-What:
+What you should learn from this project:
 
 * What is the difference between automatic and dynamic allocation
 * What is malloc and free and how to use them
