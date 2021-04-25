@@ -8,7 +8,7 @@ Read or watch:
 
 ---
 ## Learning Objectives :technologist:
-What you should learn from this project:
+What:
 
 * When and why using linked lists vs arrays
 * How to build and use linked lists
