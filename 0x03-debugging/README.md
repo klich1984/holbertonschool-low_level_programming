@@ -7,7 +7,7 @@ Read or watch:
 
 ---
 ## Learning Objectives :technologist:
-What:
+What you should learn from this project:
 
 * What is debugging
 * What are some methods of debugging manually
