@@ -5,7 +5,7 @@ Read or watch:
 
 ---
 ## Learning Objectives :technologist:
-What:
+What you should learn from this project:
 
 ---
 
