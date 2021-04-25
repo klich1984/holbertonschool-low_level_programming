@@ -9,7 +9,7 @@ Read or watch:
 
 ---
 ## Learning Objectives :technologist:
-What you should learn from this project:
+What:
 
 * What are pointers to pointers and how to use them
 * What are multidimensional arrays and how to use them
