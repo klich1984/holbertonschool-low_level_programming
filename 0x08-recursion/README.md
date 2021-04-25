@@ -10,7 +10,7 @@ Read or watch:
 
 ---
 ## Learning Objectives :technologist:
-What you should learn from this project:
+What:
 
 * What is recursion
 * How to implement recursion
