@@ -9,7 +9,7 @@ Read or watch:
 
 ---
 ## Learning Objectives :technologist:
-What you should learn from this project:
+What:
 
 * How to use arguments passed to your program
 * What are two prototypes of main that you know of, and in which case do you use one or the other
